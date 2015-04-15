@@ -1,10 +1,10 @@
 #!/bin/bash
 
-/tmp/logstash/bin/logstash -f /tmp/conf/logstash.conf&
+/opt/logstash/bin/logstash -f /opt//logstash.conf&
 
-/tmp/elasticsearch/bin/elasticsearch&
+/opt/elasticsearch/bin/elasticsearch&
 
-service lighttpd start
+nohup /opt/kibana/bin/kibana&
 
 while :; do  sleep `echo "scale=2;$(( $RANDOM % 100))/100" | bc`;  echo $RANDOM >> /tmp/toto$(($RANDOM % 10)).log; done
 
