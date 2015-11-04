@@ -3,7 +3,7 @@ FROM ubuntu:trusty
 RUN apt-get update
 RUN apt-get -y install openjdk-7-jre
 
-RUN apt-get -y install wget bc
+RUN apt-get -y install wget bc ia32-libs
 
 EXPOSE 9200 80
 
